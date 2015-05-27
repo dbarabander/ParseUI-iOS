@@ -100,7 +100,7 @@ static NSString *const PFQueryCollectionViewNextPageReusableViewIdentifier = @"n
 
     // Set some reasonable defaults
     _objectsPerPage = 25;
-    _loadingViewEnabled = YES;
+    _loadingViewEnabled = NO;
     _paginationEnabled = YES;
     _pullToRefreshEnabled = YES;
     _lastLoadCount = -1;
@@ -326,7 +326,7 @@ static NSString *const PFQueryCollectionViewNextPageReusableViewIdentifier = @"n
     _currentNextPageView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter
                                                               withReuseIdentifier:PFQueryCollectionViewNextPageReusableViewIdentifier
                                                                      forIndexPath:[self _indexPathForPaginationReusableView]];
-    _currentNextPageView.textLabel.text = NSLocalizedString(@"Load more...", @"Load more...");
+    //_currentNextPageView.textLabel.text = NSLocalizedString(@"Load more...", @"Load more...");
     [_currentNextPageView addTarget:self action:@selector(loadNextPage) forControlEvents:UIControlEventTouchUpInside];
     _currentNextPageView.animating = self.loading;
     return _currentNextPageView;
