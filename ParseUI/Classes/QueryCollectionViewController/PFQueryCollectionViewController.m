@@ -100,10 +100,13 @@ static NSString *const PFQueryCollectionViewNextPageReusableViewIdentifier = @"n
 
     // Set some reasonable defaults
     _objectsPerPage = 25;
-    _loadingViewEnabled = NO;
+    _loadingViewEnabled = YES;
     _paginationEnabled = YES;
     _pullToRefreshEnabled = YES;
     _lastLoadCount = -1;
+    
+    //hide loading view 
+    _loadingView.hidden = YES;
 
     _parseClassName = [otherClassName copy];
 }
